@@ -1,0 +1,81 @@
+# .dotfiles/alias
+
+# command
+alias ll='ls -l'
+alias tree='tree --charset unicode'
+alias myip='curl -s inet-ip.info'
+alias diff='diff --exclude=.terraform --exclude=.git'
+alias greps='grep -v -e '\''^\s*#'\'' -e '\''^\s*$'\'''
+alias curlh='curl -D - -s -o /dev/null -sSL'
+
+# aws cli with jq
+alias aec2='aws ec2 describe-instances | jq -r '"'"'.Reservations|sort_by(.Instances[].Tags[]|select(.Key == "Name").Value)| .[].Instances[]|[(.Tags[]|select(.Key == "Name").Value), .InstanceId, .PrivateIpAddress, .State.Name] | @tsv'"'"''
+alias aec2start='aws ec2 start-instances --instance-ids'
+alias aec2stop='aws ec2 stop-instances --instance-ids'
+
+# boundary 
+alias b='boundary'
+
+# docker
+alias d='docker'
+alias de='docker exec -it'
+alias dl='docker logs'
+alias dps='docker ps'
+alias ds='docker stop'
+alias dri='docker run -itd --rm '
+alias al2='docker run -itd --rm --name al2 amazonlinux'
+alias alpinx='docker run -itd --rm -v `pwd`:/usr/share/nginx/html -p 8081:80 --name alpinx nginx:alpine'
+alias alpython='docker run --rm -it -d --name alpython python:alpine'
+
+alias dc='docker-compose'
+alias dcd='docker-compose down'
+alias dcu='docker-compose up -d'
+
+# git
+alias g='git'
+alias ga='git add'
+alias gau='git add -u'
+alias gcv='git commit -v'
+alias gdc='git diff --cached'
+alias gdi='git diff'
+alias gf='git fetch --prune'
+alias gg='git grep -i -P'
+alias gp='git plog -10'
+alias gr='git fetch --prune --all && git checkout origin/HEAD && git plog -10 && git status'
+alias gs='git switch -d origin/HEAD'
+alias gst='git status'
+
+# kubernetes
+alias k='kubectl'
+alias ka='kubectl apply'
+alias kd='kubectl delete'
+alias kds='kubectl describe'
+alias kg='kubectl get'
+alias kga='kubectl get all'
+alias kgn='kubectl get node -o wide'
+alias kgp='kubectl get pod'
+alias kgx='kubectl get all,pv,pvc,job,ing'
+alias kgpa='kubectl get pod -A'
+alias kgtn='kubectl get node -o wide; kubectl top node'
+alias kdrainf='kubectl drain --ignore-daemonsets --delete-local-data'
+
+# kubectx
+alias kc='kubectx'
+alias kn='kubens'
+
+# terraform
+alias t='terraform'
+alias ta='terraform apply'
+alias te='terraform init --upgrade && terraform fmt && terraform plan'
+alias tf='terraform fmt'
+alias ti='terraform init'
+alias tiu='terraform init --upgrade'
+alias tir='terraform init -reconfigure'
+alias to='terraform output'
+alias tp='terraform plan'
+alias ts='terraform state'
+alias tv='terraform version'
+
+# waypoint
+alias wp='waypoint'
+
