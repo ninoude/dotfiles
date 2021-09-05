@@ -1,7 +1,9 @@
 # .dotfiles/alias
 
 # command
-alias ll='ls -l'
+alias vi='vim'
+alias ls='ls -FG'
+alias ll='ls -alFG'
 alias tree='tree --charset unicode'
 alias myip='curl -s inet-ip.info'
 alias diff='diff --exclude=.terraform --exclude=.git'
