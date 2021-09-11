@@ -1,5 +1,7 @@
 # kubernetes
-source <(kubectl completion bash)
+autoload -Uz compinit
+compinit
+source <(kubectl completion zsh)
 export PATH="${PATH}:${HOME}/.krew/bin"
 
 # go & goenv
