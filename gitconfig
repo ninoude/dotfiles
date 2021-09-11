@@ -40,5 +40,5 @@
 [advice]
   detachedHead = false
 [commit]
-  template = /home/ninoude/.dotfiles/git_commit_conventions.txt
+  template = ~/.dotfiles/git_commit_conventions.txt
 
