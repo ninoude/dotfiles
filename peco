@@ -50,5 +50,4 @@ function peco-cd {
     fi
    done
 }
-alias sd='peco-cd'
 
