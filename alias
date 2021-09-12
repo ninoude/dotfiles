@@ -83,5 +83,5 @@ alias wp='waypoint'
 
 # peco
 alias sd='peco-cd'
-alias gh='cd ${ghq list -p | peco}'
-alias gho='gh-open ${ghq list -p | peco}'
+alias gh='cd $(ghq list -p | peco)'
+alias gho='gh-open $(ghq list -p | peco)'
